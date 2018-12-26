@@ -49,7 +49,7 @@ function isItemActive(item, route){
   if(item.route){
     return item.route === route.location.pathname
   } else if (item.items) {  
-    return item.items.some(_ => isItemActive(_, route))
+    return item.items !== null ? item.items.some(_ => isItemActive(_, route)) : ''
   } else {
     return false
   }

@@ -9,24 +9,31 @@ import NavMenuList from "./NavMenuList";
 import axios from 'axios';
 
 
-const navItems2 = require("../../../config/navigation.json").items.map(addId);
 
-let url = 'http://localhost:8000/api/get_site_menu';
-const navItems =  axios.post(url)
-    .then(function (response) {
-        console.log(response.data);
-        return response.data;
-    });
+const navItems = require("../../../config/navigation.json").items.map(addId);
 console.log(navItems);
-console.log(navItems2);
+let url = 'http://localhost:8000/api/get_site_menu';
+
+
 export default class NavMenu extends React.Component {
-  componentWillMount() {
+    state = {
+        navItems: []
+    }
+
+    componentWillMount() {
+        const {navItems} = this.state;
+        store.dispatch(navigationInit(navItems));
+    }
 
 
-    store.dispatch(navigationInit(navItems));
-  }
-
-  componentDidMount() {
+    componentDidMount () {
+    console.log('here')
+    axios.post(url).then(res => {
+        console.log(res.data);
+        this.setState({navItems: res.data})
+    }).catch(err => {
+        return err
+    });
     const defaults = {
       accordion: true,
       speed: config.menu_speed,
@@ -169,6 +176,7 @@ export default class NavMenu extends React.Component {
   }
 
   render() {
+    const {navItems} = this.state;
     return navItems ? <NavMenuList items={navItems} /> : this.props.children;
   }
 }
