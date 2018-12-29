@@ -2,6 +2,7 @@ import { routes as appViews } from "./views/app-views";
 import { routes as auth } from "./views/auth";
 import { routes as calendar } from "./views/calendar";
 import { routes as dashboards } from "./views/dashboard";
+import { routes as projects } from "./views/projects";
 import { routes as eCommerce } from "./views/e-commerce";
 import { routes as forms } from "./views/forms";
 import { routes as graphs } from "./views/graphs";
@@ -18,6 +19,7 @@ export const routes = [
   ...appViews,
   ...calendar,
   ...dashboards,
+    ...projects,
   ...eCommerce,
   ...forms,
   ...graphs,

@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
         <div className="row">
           <div className="col-xs-12 col-sm-6">
             <span className="txt-color-white">
-              SmartAdmin 1.9.X - Web Application Framework © 2017-2019
+              IT WORKS 1.0.X - Web Application © 2017-2019
             </span>
           </div>
 
