@@ -284,44 +284,85 @@ export default function AddProject() {
                 <option value="Установка и настройка CMS">Установка и настройка CMS</option>
                 <option value="Фотосъемка">Фотосъемка</option>
               </optgroup>
-              <optgroup label="Central Time Zone">
-                <option value="AL">Alabama</option>
-                <option value="AR">Arkansas</option>
-                <option value="IL">Illinois</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="OK">Oklahoma</option>
-                <option value="SD">South Dakota</option>
-                <option value="TX">Texas</option>
-                <option value="TN">Tennessee</option>
-                <option value="WI">Wisconsin</option>
+              <optgroup label="Аудио/Видео">
+                <option value="Анимация">Анимация</option>
+                <option value="Аудио/Видео монтаж">Аудио/Видео монтажs</option>
+                <option value="Видеореклама">Видеореклама</option>
+                <option value="Музыка">Музыка</option>
+                <option value="Обработка аудио">Обработка аудио</option>
+                <option value="Обработка видео">Обработка видео</option>
+                <option value="Транскрибация">Транскрибация</option>
+                <option value="Услуги диктора">Услуги диктора</option>
+
               </optgroup>
-              <optgroup label="Eastern Time Zone">
-                <option value="CT">Connecticut</option>
-                <option value="DE">Delaware</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="IN">Indiana</option>
-                <option value="ME">Maine</option>
-                <option value="MD">Maryland</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MI">Michigan</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NY">New York</option>
-                <option value="NC">North Carolina</option>
-                <option value="OH">Ohio</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WV">West Virginia</option>
+              <optgroup label="Продвижение">
+                <option value="Email маркетинг">Email маркетинг</option>
+                <option value="SEO аудит сайтов">SEO аудит сайтов</option>
+                <option value="Контекстная реклама">Контекстная реклама</option>
+                <option value="Поисковое продвижение (SEO)">Поисковое продвижение (SEO)</option>
+                <option value="Поисковое управление репутацией (SERM)">Поисковое управление репутацией (SERM)</option>
+                <option value="Продажи и генирация лидов">Продажи и генирация лидов</option>
+                <option value="Продвижение в социальных сетях (SMM)">Продвижение в социальных сетях (SMM)</option>
+                <option value="Реклама в социальных медиа">Реклама в социальных медиа</option>
+                <option value="Тизерная реклама">Тизерная реклама</option>
+
+              </optgroup>
+              <optgroup label="Архитектура и инжениринг">
+                <option value="Архитектурные проекты">Архитектурные проекты</option>
+                <option value="Инжениринг">Инжениринг</option>
+                <option value="Ландшафтный дизайн">Ландшафтный дизайн</option>
+                <option value="Проектирование">Проектирование</option>
+                <option value="Чертежи и схемы">Чертежи и схемы</option>
+
+
+              </optgroup>
+              <optgroup label="Мобильные приложения">
+                <option value="Разработка под Android">Разработка под Android</option>
+                <option value="Разработка под IOS (iPhone/iPad)">Разработка под IOS (iPhone/iPad)</option>
+              </optgroup>
+
+              <optgroup label="Администрирование">
+                <option value="DevOps">DevOps</option>
+                <option value="FreeBSD">FreeBSD</option>
+                <option value="IP телефония/VoIp">IP телефония/VoIp</option>
+                <option value="Linux/Unix">Linux/Unix</option>
+                <option value="Windows">Windows</option>
+                <option value="Администрирование систем">Администрирование систем</option>
+                <option value="Геоинформационные системы">Геоинформационные системы</option>
+                <option value="Компьютерные сети">Компьютерные сети</option>
+              </optgroup>
+              <optgroup label="Аутсорсинг и консалтинг">
+                <option value="Бизнес консультирование">Бизнес консультирование</option>
+                <option value="Бухгалтерские услуги">Бухгалтерские услуги</option>
+                <option value="Консалтинг">Консалтинг</option>
+                <option value="Рекрутинг">Рекрутинг</option>
+                <option value="Управление клиентами/CRM">Управление клиентами/CRM</option>
+                <option value="Управление проектами">Управление проектами</option>
+
+              </optgroup>
+              <optgroup label="Переводы">
+                <option value="Английский язык">Английский язык</option>
+                <option value="Иврит">Иврит</option>
+                <option value="Испанский язык">Испанский язык</option>
+                <option value="Итальянский язык">Итальянский язык</option>
+                <option value="Локализация ПО/Сайтов/Игр">Локализация ПО/Сайтов/Игр</option>
+                <option value="Немецкий язык">Немецкий язык</option>
+                <option value="Перевод текстов">Перевод текстов</option>
+                <option value="Французский язык">Французский язык</option>
+
+              </optgroup>
+              <optgroup label="Работа с текстами">
+                <option value="Копирайтинг">Копирайтинг</option>
+                <option value="Набор текстов">Набор текстов</option>
+                <option value="Написание статей">Написание статей</option>
+                <option value="Написание сценариев">Написание сценариев</option>
+                <option value="Нейминг и слоганы">Нейминг и слоганы</option>
+                <option value="Публикация объявлений">Публикация объявлений</option>
+                <option value="Редактура и корректура текстов">Редактура и корректура текстов</option>
+                <option value="Рерайтинг">Рерайтинг</option>
+                <option value="Рефераты, дипломы, курсовые">Рефераты, дипломы, курсовые</option>
+                <option value="Стихи, песни, проза">Стихи, песни, проза</option>
+                <option value="Техническая документация">Техническая документация</option>
               </optgroup>
             </Select2>
             </div>
