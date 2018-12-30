@@ -3,6 +3,8 @@ import { JarvisWidget } from "../../../common/widgets";
 import { Dropdown, MenuItem } from "react-bootstrap";
 import Select2 from "../../../common/forms/inputs/Select2";
 import SmartCKEditor from "../../../common/forms/editors/SmartCKEditor";
+import UiDatepicker from "../../../common/ui/components/jquery/UiDatepicker";
+import { OverlayTrigger, Tooltip, Popover } from "react-bootstrap";
 const styles={
     projectForm: {
         left: '-20px',
@@ -11,6 +13,14 @@ const styles={
         fontSize:"20px"
 
     },
+    projectForm1: {
+        left: '-20px',
+        top: '7px',
+        position: 'relative',
+        fontSize:"15px"
+
+    },
+
 
 
 };
@@ -61,45 +71,100 @@ export default function AddProject() {
         <form className="smart-form">
 
           <fieldset>
-            <div className="col-md-4">
-            <div className="btn-group dropdown">
-              <button className="btn btn-primary" style={{padding:"10px"}}><i style={{color:"yellow"}} className="fa fa-star"></i>  Премиум размещение</button>
-              <button className="btn btn-primary dropdown-toggle" style={{height:"40px"}} data-toggle="dropdown" aria-expanded="false">
-                <span className="caret" ></span></button>
-              <ul className="dropdown-menu">
-                <li><a href="#/">Неделя +5$</a></li>
-                <li><a href="#/">2 Недели +7$</a></li>
-                <li><a href="#/">Месяц +10$</a></li>
-                <li classNmae="divider"></li>
-              </ul>
+            <div className="col-md-3">
+              <label style={ styles.projectForm1} className="label pull-right">Платные опции</label>
             </div>
+            <div className="col-md-3">
+
+              <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Popover id="popover-activated-on-hover-popover">
+                      Ваш проект гарантированно заметят
+                      Премиум проекты отображаются над всеми другими
+                      проектами в списке в течение 2 дней — пропустить их невозможно.
+                      <a href="">Смотреть инфо видео -> нажмите на <i className="fa fa-info"></i></a>
+
+                    </Popover>
+                  }
+              >
+                <div className="btn-group dropdown">
+                  <button className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style={{padding:"5px"}}><i style={{color:"yellow"}} className="fa fa-star"></i>  Премиум размещение</button>
+                  <ul className="dropdown-menu">
+                    <li><input style={{position:"relative",left:"20px"}} type="radio" name="premium-type" />
+                        <span style={{position:"relative",left:"20px"}}>   Неделя +5$</span></li>
+                    <li><input style={{position:"relative",left:"20px"}} type="radio" name="premium-type" />   <span style={{position:"relative",left:"20px"}}>   2 Недели +7$</span></li>
+                    <li><input style={{position:"relative",left:"20px"}} type="radio" name="premium-type" /><span style={{position:"relative",left:"20px"}}>   Месяц +10$</span></li>
+                    <li classNmae="divider"></li>
+                  </ul>
+                  <button className="btn btn-primary " style={{width:"20px",height:"30px"}} >
+                    <span className="fa fa-info" ></span></button>
+
+                </div>
+              </OverlayTrigger>
+
+
+
             </div>
-            <div className="col-md-4">
-            <div className="btn-group dropdown">
-              <button className="btn btn-primary" style={{padding:"10px"}}><i style={{color:"yellow"}} className="fa fa-eye"></i>  Контроль качества</button>
-              <button className="btn btn-primary dropdown-toggle" style={{height:"40px"}} data-toggle="dropdown" aria-expanded="false">
-                <span className="caret" ></span></button>
-              <ul className="dropdown-menu">
-                <li><a href="#/">1 Специалист +5%</a></li>
-                <li><a href="#/">2 Специалиста +10%</a></li>
-                <li classNmae="divider"></li>
-              </ul>
-            </div>
+            <div className="col-md-3">
+
+              <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Popover id="popover-activated-on-hover-popover">
+                      За качеством и сроками исполнения вашего проекта будут наблюдать наши специалисты.
+                      Это поможит еще на ранней стадии выявить отутствие профессионализма у фрилансера
+                      и заменить исполнителя не подвергая риску сроки и средства
+                      <a href="">Смотреть инфо видео -> нажмите на <i className="fa fa-info"></i></a>
+
+                    </Popover>
+                  }
+              >
+                <div className="btn-group dropdown">
+                  <button className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style={{padding:"5px"}}><i style={{color:"yellow"}} className="fa fa-eye"></i>  Контроль качества</button>
+                  <ul className="dropdown-menu">
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="control-quality-type" />
+                      <span style={{position:"relative",left:"10px"}}>   1 Специалист +5%</span></li>
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="control-quality-type" />   <span style={{position:"relative",left:"10px"}}>   2 Специалиста +10%</span></li>
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="control-quality-type" /><span style={{position:"relative",left:"10px"}}>   3 Специалиста +12%</span></li>
+                    <li classNmae="divider"></li>
+                  </ul>
+                  <button className="btn btn-primary " style={{width:"20px",height:"30px"}} >
+                    <span className="fa fa-info" ></span></button>
+
+                </div>
+              </OverlayTrigger>
+
             </div>
 
-            <div className="col-md-4">
-              <div className="btn-group dropdown">
-                <button className="btn btn-primary" style={{padding:"10px"}}><i style={{color:"yellow"}} className="fa fa-group"></i>  Требуется команда</button>
-                <button className="btn btn-primary dropdown-toggle" style={{height:"40px"}} data-toggle="dropdown" aria-expanded="false">
-                  <span className="caret" ></span></button>
-                <ul className="dropdown-menu">
-                  <li><a href="#/">2 Специалиста </a></li>
-                  <li><a href="#/">3 Специалиста </a></li>
-                  <li><a href="#/">4 Специалиста </a></li>
-                  <li><a href="#/">Более 4 Специалистов </a></li>
-                  <li classNmae="divider"></li>
-                </ul>
-              </div>
+            <div className="col-md-3">
+
+              <OverlayTrigger
+                  placement="top"
+                  overlay={
+                    <Popover id="popover-activated-on-hover-popover">
+                      Наши специалисты проводят собеседования с фрилансерами и подбирают команду для вашего проекта
+                      <a href="">Смотреть инфо видео -> нажмите на <i className="fa fa-info"></i></a>
+
+                    </Popover>
+                  }
+              >
+                <div className="btn-group dropdown">
+                  <button className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style={{padding:"5px"}}><i style={{color:"yellow"}} className="fa fa-group"></i>  Подбор команды</button>
+                  <ul className="dropdown-menu">
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="team" />
+                      <span style={{position:"relative",left:"10px"}}>   1 Фрилансер +5%</span></li>
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="team" />   <span style={{position:"relative",left:"10px"}}>   2 Фрилансера +10%</span></li>
+                    <li><input style={{position:"relative",left:"10px"}} type="radio" name="team" /><span style={{position:"relative",left:"10px"}}>   3 Фрилансера +12%</span></li>
+                    <li classNmae="divider"></li>
+                  </ul>
+                  <button className="btn btn-primary " style={{width:"20px",height:"30px"}} >
+                    <span className="fa fa-info" ></span></button>
+
+                </div>
+              </OverlayTrigger>
+
+
             </div>
 
           </fieldset>
@@ -127,7 +192,7 @@ export default function AddProject() {
                   <input type="text" className="input-lg" />
                 </label>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-1">
                 <label class="select"><select class="input-lg">
                   <option value="0">&#8372;</option>
                   <option value="1">$</option>
@@ -149,26 +214,75 @@ export default function AddProject() {
                 className="select2"
                 defaultValue={["NV", "MT", "MI"]}
             >
-              <optgroup label="Alaskan/Hawaiian Time Zone">
-                <option value="AK">Alaska</option>
-                <option value="HI">Hawaii</option>
+              <optgroup label="Программирование">
+                <option value="1С">1С</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="C#">C#</option>
+                <option value="C/C++">C/C++</option>
+                <option value="Delphi/Object Pascal">Delphi/Object Pascal</option>
+                <option value="Flash/Flex">Flash/Flex</option>
+                <option value="Git/Mercurial/SVN">Git/Mercurial/SVN</option>
+                <option value="Go">Go</option>
+                <option value="Java">Java</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Mac OS/Objective C">Mac OS/Objective C</option>
+                <option value="Node.js">Node.js</option>
+                <option value="PHP">PHP</option>
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Swift">Swift</option>
+                <option value="Базы данных">Базы данных</option>
+                <option value="Веб программирование">Веб программирование</option>
+                <option value="Защита ПО и безопасность">Защита ПО и безопасность</option>
+                <option value="Машинное обучение">Машинное обучение</option>
+                <option value="Парсинг данных">Парсинг данных</option>
+                <option value="Прикладное программирование">Прикладное программирование</option>
+                <option value="Разработка игр">Разработка игр</option>
+                <option value="Разработка чат-ботов">Разработка чат-ботов</option>
+                <option value="Системное программирование">Системное программирование</option>
+                <option value="Тестирование и QA">Тестирование и QA</option>
               </optgroup>
-              <optgroup label="Pacific Time Zone">
-                <option value="CA">California</option>
-                <option value="NV">Nevada</option>
-                <option value="OR">Oregon</option>
-                <option value="WA">Washington</option>
+              <optgroup label="Дизайн/Арт">
+                <option value="3D графика">3D графика</option>
+                <option value="Баннеры">Баннеры</option>
+                <option value="Векторная графика">Векторная графика</option>
+                <option value="Визуализация и моделирование">Визуализация и моделирование</option>
+                <option value="Дизайн визиток">Дизайн визиток</option>
+                <option value="Дизайн выставочных стендов">Дизайн выставочных стендов</option>
+                <option value="Дизайн интерфейсов">Дизайн интерфейсов</option>
+                <option value="Дизайн мобильных приложений">Дизайн мобильных приложений</option>
+                <option value="Дизайн сайтов">Дизайн сайтов</option>
+                <option value="Дизайн упаковки">Дизайн упаковки</option>
+                <option value="Живопись и графика">Живопись и графика</option>
+                <option value="Иконки и пиксельная графика">Иконки и пиксельная графика</option>
+                <option value="Инфографика">Инфографика</option>
+                <option value="Логотипы">Логотипы</option>
+                <option value="Наружная реклама">Наружная реклама</option>
+                <option value="Обработка фото">Обработка фото</option>
+                <option value="Оформление страниц в социальных сетях">Оформление страниц в социальных сетях</option>
+                <option value="Полиграфический дизайн">Полиграфический дизайн</option>
+                <option value="Предметный дизайн">Предметный дизайн</option>
+                <option value="Разработка шрифтов">Разработка шрифтов</option>
+                <option value="Фирменный стиль">Фирменный стиль</option>
               </optgroup>
-              <optgroup label="Mountain Time Zone">
-                <option value="AZ">Arizona</option>
-                <option value="CO">Colorado</option>
-                <option value="ID">Idaho</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NM">New Mexico</option>
-                <option value="ND">North Dakota</option>
-                <option value="UT">Utah</option>
-                <option value="WY">Wyoming</option>
+              <optgroup label="Услуги">
+                <option value="HTML/CSS верстка">HTML/CSS верстка</option>
+                <option value="Видеосъемка">Видеосъемка</option>
+                <option value="Интеграция платежных систем">Интеграция платежных систем</option>
+                <option value="Интернет магазины и электронная коммерция">Интернет магазины и электронная коммерция</option>
+                <option value="Контент менеджмент">Контент менеджмент</option>
+                <option value="Маркетинговые исследования">Маркетинговые исследования</option>
+                <option value="Настройка ПО/серверов">Настройка ПО/серверов</option>
+                <option value="Обработка данных">Обработка данных</option>
+                <option value="Обучение">Обучение</option>
+                <option value="Поиск и сбор информации">Поиск и сбор информации</option>
+                <option value="Прототипирование">Прототипирование</option>
+                <option value="Работа с клиентами">Работа с клиентами</option>
+                <option value="Разработка презентаций">Разработка презентаций</option>
+                <option value="Рукоделие/Hand made">Рукоделие/Hand made</option>
+                <option value="Сопровождение сайтов">Сопровождение сайтов</option>
+                <option value="Установка и настройка CMS">Установка и настройка CMS</option>
+                <option value="Фотосъемка">Фотосъемка</option>
               </optgroup>
               <optgroup label="Central Time Zone">
                 <option value="AL">Alabama</option>
@@ -268,12 +382,75 @@ export default function AddProject() {
             </div>
           </fieldset>
           <fieldset>
+            <div className="row">
+              <div className="col-md-3">
+                <label style={ styles.projectForm} className="label pull-right">Тип работы</label>
+              </div>
+              <section className="col col-9">
+                <label className="toggle">
+                  <input
+                      type="radio"
+                      name="job-type"
+                      defaultChecked
+                  />
+                  <i
+                      data-swchon-text="ON"
+                      data-swchoff-text="OFF"
+                  />
+                  Одноразовая проектная работа
+                </label>
+                <label className="toggle">
+                  <input type="radio" name="job-type" />
+                  <i
+                      data-swchon-text="ON"
+                      data-swchoff-text="OFF"
+                  />
+                  Долгосрочная удаленная работа
+                </label>
+                <label className="toggle">
+                  <input type="radio" name="job-type" />
+                  <i
+                      data-swchon-text="ON"
+                      data-swchoff-text="OFF"
+                  />
+                  Постоянное офисное предложение
+                </label>
+
+              </section>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div className="row">
+              <div className="col-md-3">
+                <label style={ styles.projectForm} className="label pull-right">Актуален до</label>
+              </div>
+              <div className="col-md-9">
+                <div className="input-group">
+                  <UiDatepicker
+                      name="mydate"
+                      placeholder="Select a date"
+                      className="form-control datepicker"
+                      data-date-format="dd/mm/yy"
+                  />
+                  <span className="input-group-addon">
+                                  <i className="fa fa-calendar" />
+                                </span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <p className="alert alert-info">
+              <h3 className="text-primary">Описание проекта</h3>
+            </p>
+          </fieldset>
+          <fieldset>
 
             <div className="row">
 
 
                   <div>
-                    <div className="widget-body no-padding">
+                    <div className="">
                       <SmartCKEditor
                           container="editable"
                           options={{
@@ -287,6 +464,18 @@ export default function AddProject() {
 
 
             </div>
+          </fieldset>
+          <fieldset>
+            <div className="col-md-4">
+
+            </div>
+            <a href="#/"
+               style={{padding:"20px"}}
+               className="btn btn-primary"
+              // onClick={this.onClick}
+            >
+              <i className="fa fa-shopping-cart" /> Опубликовать проект
+            </a>
           </fieldset>
           </form>
         </div>
