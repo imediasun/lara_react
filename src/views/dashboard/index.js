@@ -13,7 +13,7 @@ const Social = Loadable({
 
 export const routes = [
   {
-    path: ["/", "/dashboard/analytics"],
+    path: "/dashboard/analytics",
     exact: true,
     name: "Dashboard",
     component: Dashboard

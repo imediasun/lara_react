@@ -17,19 +17,21 @@ class Layout extends React.Component {
       <div>
         <Header />
         <Navigation />
+
         <div id="main" role="main">
           <LayoutSwitcher />
           <Ribbon />
 
           <Switch>
             {routes.map((route, idx) => {
-              return route.component ? (
+                console.log(route);
+                return route.component ? (
                 <Route
                   key={idx}
                   path={route.path}
                   exact={route.exact}
                   name={route.name}
-                  render={props => <route.component {...props} />}
+                  render={props => <route.component {...this.props} />}
                 />
               ) : null;
             })}

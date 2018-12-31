@@ -12,7 +12,7 @@ export default class AddProject extends React.Component {
       <div id="content" className="animated fadeInUp">
         <div className="row">
           <BigBreadcrumbs
-            items={["Projects", "AddProject"]}
+            items={["AddProject"]}
             className="col-xs-12 col-sm-7 col-md-7 col-lg-4"
           />
           <Stats />

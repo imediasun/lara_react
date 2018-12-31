@@ -10,30 +10,33 @@ import axios from 'axios';
 
 
 
-const navItems = require("../../../config/navigation.json").items.map(addId);
-console.log(navItems);
+const navItems2 = require("../../../config/navigation.json").items.map(addId);
+//console.log(navItems);
 let url = 'http://localhost:8000/api/get_site_menu';
 
 
 export default class NavMenu extends React.Component {
     state = {
         navItems: []
-    }
+    };
+
 
     componentWillMount() {
+        console.log('here')
+        axios.post(url).then(res => {
+            console.log('res.data',res.data);
+            this.setState({navItems: res.data.items.map(addId)})
+            this.setState({navItems: navItems2})
+        }).catch(err => {
+            return err
+        });
         const {navItems} = this.state;
         store.dispatch(navigationInit(navItems));
     }
 
 
     componentDidMount () {
-    console.log('here')
-    axios.post(url).then(res => {
-        console.log(res.data);
-        this.setState({navItems: res.data})
-    }).catch(err => {
-        return err
-    });
+
     const defaults = {
       accordion: true,
       speed: config.menu_speed,
@@ -47,11 +50,13 @@ export default class NavMenu extends React.Component {
     const opts = $.extend({}, defaults, this.props);
     //Assign current element to variable, in this case is UL element
     const $this = $(findDOMNode(this));
-
+        console.log(123,$this.find("li"))
     //add a mark [+] to a multilevel menu
     $this.find("li").each(function() {
+
       if ($(this).find("ul").length !== 0) {
         //add the multilevel sign next to the link
+          console.log(321)
         $(this)
           .find("a:first")
           .append("<b class='collapse-sign'>" + opts.closedSign + "</b>");
